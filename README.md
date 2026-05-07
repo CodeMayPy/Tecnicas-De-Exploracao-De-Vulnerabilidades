@@ -1,6 +1,6 @@
 <a name="topo"></a>
 
-🛡️ ***Técnicas de Exploração de Vulnerabilidades***
+### 🛡️ Técnicas de Exploração de Vulnerabilidades
 
 Este repositório reúne uma série de laboratórios práticos focados em Segurança Ofensiva e Pentest. O objetivo é documentar o ciclo completo de exploração: do reconhecimento à pós-exploração, analisando falhas críticas em diferentes protocolos e sistemas.
 
@@ -13,7 +13,7 @@ Este repositório reúne uma série de laboratórios práticos focados em Segura
 
 ---
 
-### 1. Exploração de Backdoor (VSFTPD v2.3.4)
+## 1. Exploração de Backdoor (VSFTPD v2.3.4)
 
 Aqui explorei uma vulnerabilidade histórica no serviço de FTP de um servidor Linux (Metasploitable 2), utilizando o **Metasploit** Framework no *Kali Linux*.
 
@@ -90,11 +90,11 @@ Etapa 5: Prova |
 
 🔒 **Medidas de Mitigação:**
 
-    Atualização de Software: A principal defesa contra este ataque é a
-    atualização para uma versão estável e segura do vsftpd (superior à 2.3.4).
+    Atualização de Software: A principal defesa contra este ataque é a atualização para uma versão 
+    estável e segura do vsftpd (superior à 2.3.4).
 
-    Hardening de Serviços: Desativar banners de versão para dificultar o
-    reconhecimento por parte de atacantes.
+    Hardening de Serviços: Desativar banners de versão para dificultar o reconhecimento por parte 
+    de atacantes.
 
     Firewall: Bloquear portas não essenciais.
 
@@ -102,7 +102,7 @@ Etapa 5: Prova |
 
 ---
 
-### 2- Negação de Serviço - DoS (Blue Screen of Death - BSOD)
+## 2- Negação de Serviço - DoS (Blue Screen of Death - BSOD)
 
 Neste laboratório, explorei a vulnerabilidade crítica *MS12-020* no protocolo *RDP* (Remote Desktop Protocol). O objetivo foi demonstrar como pacotes malformados podem causar o colapso total do Kernel de um sistema operacional.
 
@@ -121,7 +121,7 @@ A falha reside na forma como o driver de terminal do Windows (termdd.sys) manipu
     Módulo: auxiliary/dos/windows/rdp/ms12_020_maxchannelids
 
 
-🚀 **Jornada de Execução e Adaptação:**
+# 🚀 Jornada de Execução e Adaptação:
 
 # 2.1- O Desafio do Windows 7 Starter:
 
@@ -159,22 +159,23 @@ run
     Desativação: Desabilitar o serviço RDP caso não seja estritamente 
     necessário.
 
-### ⚠️ Nenhum Windows XP foi ferido permanentemente (foi só um reboot) durante este experimento.
+
+#### ⚠️ Nenhum Windows XP foi ferido permanentemente (foi só um reboot) durante este experimento.
 
 [↑ Voltar ao topo](#topo)
 
 ---
 
-### 3. Exploração de Falha em SSH
-texto aqui
+# 3. Exploração de Falha em SSH
+Em breve!
 
 
 [↑ Voltar ao topo](#topo)
 
 ---
 
-### 4. Adicionando Backdoor em um Executável
-texto aqui
+# 4. Adicionando Backdoor em um Executável
+Em breve!
 
 [↑ Voltar ao topo](#topo)
 
