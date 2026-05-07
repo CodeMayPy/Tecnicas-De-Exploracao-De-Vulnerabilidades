@@ -43,6 +43,8 @@ Iniciei o Metasploit e pesquisei pelo módulo específico para a versão do serv
 ```Bash
 msfconsole
 search vsftpd
+
+
 ```
 
  Etapa 1: msfconsole | Etapa 2: search vsftpd |
@@ -88,9 +90,11 @@ Etapa 5: Prova |
 
 🔒 **Medidas de Mitigação:**
 
-    Atualização de Software: A principal defesa contra este ataque é a atualização para uma versão estável e segura do vsftpd (superior à 2.3.4).
+    Atualização de Software: A principal defesa contra este ataque é a
+    atualização para uma versão estável e segura do vsftpd (superior à 2.3.4).
 
-    Hardening de Serviços: Desativar banners de versão para dificultar o reconhecimento por parte de atacantes.
+    Hardening de Serviços: Desativar banners de versão para dificultar o
+    reconhecimento por parte de atacantes.
 
     Firewall: Bloquear portas não essenciais.
 
@@ -98,9 +102,64 @@ Etapa 5: Prova |
 
 ---
 
-### 2. Negação de Serviço - DoS
-texto aqui
+### 2- Negação de Serviço - DoS (Blue Screen of Death - BSOD)
 
+Neste laboratório, explorei a vulnerabilidade crítica *MS12-020* no protocolo *RDP* (Remote Desktop Protocol). O objetivo foi demonstrar como pacotes malformados podem causar o colapso total do Kernel de um sistema operacional.
+
+📝 **Descrição Técnica:**
+
+A falha reside na forma como o driver de terminal do Windows (termdd.sys) manipula sequências específicas de pacotes RDP. Ao enviar requisições com IDs de canais inválidos, ocorre uma corrupção de memória que resulta em uma interrupção crítica, forçando o sistema a exibir a "Tela Azul da Morte" (BSOD) para evitar danos ao hardware.
+
+🛠️ Tecnologias e Ferramentas:
+
+    Atacante: Kali Linux
+
+    Alvo: Windows XP Professional (Ambiente de Teste)
+
+    Framework: Metasploit (msfconsole)
+
+    Módulo: auxiliary/dos/windows/rdp/ms12_020_maxchannelids
+
+
+🚀 **Jornada de Execução e Adaptação:**
+
+# 2.1- O Desafio do Windows 7 Starter:
+
+Inicialmente, os testes foram realizados em um Windows 7 Starter. No entanto, identifiquei que a versão específica não possui o servidor de RDP nativo, o que impediu a exploração direta da porta 3389. Em vez de desistir, a estratégia foi adaptada para um ambiente Windows XP, onde o protocolo pôde ser habilitado para a demonstração da falha.
+
+# 2.2- Preparação do Alvo (Windows XP):
+
+Para que o ataque fosse bem-sucedido, foram necessárias as seguintes configurações na máquina alvo:
+
+1- Habilitação de Conexões Remotas (RDP).
+2- Desativação completa de Firewall do Windows.
+3- Verificação da porta ativa via CMD:
+```Bash
+netstat -an | findstr :3389.
+```
+# 2.3- Configuração e Disparo no Metasploit:
+```Bash
+use auxiliary/dos/windows/rdp/ms12_020_maxchannelids
+set RHOSTS [ip_maquina_alvo]
+run
+```
+| Evidência da Exploração: Configuração e Tela Azul |
+|:---:|
+| <img src="Dos_rdp/dos.png" width="800px"><br><sup>À esquerda: Execução do exploit no Metasploit. À direita: Tela Azul (BSOD) no Windows XP.</sup> |
+
+**Resultado:** O sistema alvo interrompeu suas atividades instantaneamente, exibindo o erro no arquivo RDPWD.SYS, confirmando a eficácia do DoS.
+
+🔒 Medidas de Mitigação:
+
+    Atualização (Patching): Instalação da atualização de segurança KB2671387.
+
+    NLA: Habilitar a Autenticação no Nível da Rede (Network Level 
+    Authentication), que exige login antes do processamento dos pacotes RDP.
+
+    Desativação: Desabilitar o serviço RDP caso não seja estritamente 
+    necessário.
+
+### ⚠️ Nenhum Windows XP foi ferido permanentemente (foi só um reboot) durante este experimento.
 
 [↑ Voltar ao topo](#topo)
 
@@ -118,3 +177,7 @@ texto aqui
 texto aqui
 
 [↑ Voltar ao topo](#topo)
+
+
+site para baixar isos:
+https://archive.org
