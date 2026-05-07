@@ -17,9 +17,9 @@ Este repositório reúne uma série de laboratórios práticos focados em Segura
 
 Aqui explorei uma vulnerabilidade histórica no serviço de FTP de um servidor Linux (Metasploitable 2), utilizando o **Metasploit** Framework no *Kali Linux*.
 
-📝 Descrição Técnica
+📝 **Descrição Técnica:**
 
-A versão 2.3.4 do vsftpd continha uma vulnerabilidade de backdoor (porta dos fundos) que permitia a execução remota de comandos com privilégios de root. O ataque consiste em disparar uma sequência específica de caracteres que abre uma porta de escuta para acesso direto à shell do sistema.
+A versão 2.3.4 do vsftpd continha uma vulnerabilidade de *backdoor* (porta dos fundos) que permitia a execução remota de comandos com privilégios de root. O ataque consiste em disparar uma sequência específica de caracteres que abre uma porta de escuta para acesso direto à *shell* do sistema.
 
 
 🛠️ Tecnologias e Ferramentas
@@ -33,8 +33,9 @@ A versão 2.3.4 do vsftpd continha uma vulnerabilidade de backdoor (porta dos fu
     Módulo: exploit/unix/ftp/vsftpd_234_backdoor
 
     Carga Útil (Payload): payload/cmd/unix/interact
+    
 
-### 🚀 Passo a Passo da Execução:
+# 🚀 Passo a Passo da Execução:
 
 # 1.1- Reconhecimento e Pesquisa:
 
@@ -100,9 +101,6 @@ Etapa 5: Prova |
 ### 2. Negação de Serviço - DoS
 texto aqui
 
-<div style="text-align: center;">
-  <img src="ftp/msfconsole.png" alt="print identificando msf" width="500px">
-</div> 
 
 [↑ Voltar ao topo](#topo)
 
