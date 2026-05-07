@@ -1,6 +1,6 @@
 <a name="topo"></a>
 
-### 🛡️ Técnicas de Exploração de Vulnerabilidades
+# 🛡️ Técnicas de Exploração de Vulnerabilidades
 
 Este repositório reúne uma série de laboratórios práticos focados em Segurança Ofensiva e Pentest. O objetivo é documentar o ciclo completo de exploração: do reconhecimento à pós-exploração, analisando falhas críticas em diferentes protocolos e sistemas.
 
@@ -13,7 +13,7 @@ Este repositório reúne uma série de laboratórios práticos focados em Segura
 
 ---
 
-## 1. Exploração de Backdoor (VSFTPD v2.3.4)
+### 1. Exploração de Backdoor (VSFTPD v2.3.4)
 
 Aqui explorei uma vulnerabilidade histórica no serviço de FTP de um servidor Linux (Metasploitable 2), utilizando o **Metasploit** Framework no *Kali Linux*.
 
@@ -37,7 +37,7 @@ A versão 2.3.4 do vsftpd continha uma vulnerabilidade de *backdoor* (porta dos 
 
 # 🚀 Passo a Passo da Execução:
 
-# 1.1- Reconhecimento e Pesquisa:
+### 1.1- Reconhecimento e Pesquisa:
 
 Iniciei o Metasploit e pesquisei pelo módulo específico para a versão do serviço FTP identificada na fase de enumeração.   
 ```Bash
@@ -51,7 +51,7 @@ search vsftpd
 |:---:|:---:|
 | <img src="ftp/msfconsole.png" width="400px"><br><sup>Terminal com comando *msfconsole*.</sup> | <img src="ftp/vsftpd1.png" width="400px"><br><sup>Terminal com comando *search vsftpd*.</sup> |
 
-# 1.2- Configuração do Módulo:
+### 1.2- Configuração do Módulo:
 
 Selecionei o exploit e configurei o alvo (RHOSTS) com o endereço IP da máquina vulnerável.
 ```Bash
@@ -63,7 +63,7 @@ Etapa 3: Exploit | Etapa 4: payload |
 |:---:|:---:|
 | <img src="ftp/vsftpd3.png" width="400px"><br><sup>Terminal com comando *exploit*.</sup> | <img src="ftp/payloads.png" width="400px"><br><sup>Terminal com comando *payload*.</sup> |
 
-# 1.3- Exploração e Ganho de Acesso
+### 1.3- Exploração e Ganho de Acesso
 
 Ao executar o comando **exploit**, o *framework* identificou o banner vulnerável, disparou o gatilho do backdoor e estabeleceu uma conexão reversa estável.
 ```Bash
@@ -76,7 +76,7 @@ Etapa 5: Exploit |
 
 **Resultado:** Uma sessão de comando foi aberta com privilégios de UID: 0 (root).
 
-# 1.4- Pós-Exploração e Prova de Conceito (PoC)
+### 1.4- Pós-Exploração e Prova de Conceito (PoC)
 
 Para demonstrar o controle total sobre o sistema, naveguei pelos diretórios e modifiquei um arquivo *.txt* no servidor alvo.
 ```Bash
@@ -102,7 +102,7 @@ Etapa 5: Prova |
 
 ---
 
-## 2- Negação de Serviço - DoS (Blue Screen of Death - BSOD)
+### 2- Negação de Serviço - DoS (Blue Screen of Death - BSOD)
 
 Neste laboratório, explorei a vulnerabilidade crítica *MS12-020* no protocolo *RDP* (Remote Desktop Protocol). O objetivo foi demonstrar como pacotes malformados podem causar o colapso total do Kernel de um sistema operacional.
 
@@ -123,11 +123,11 @@ A falha reside na forma como o driver de terminal do Windows (termdd.sys) manipu
 
 # 🚀 Jornada de Execução e Adaptação:
 
-# 2.1- O Desafio do Windows 7 Starter:
+### 2.1- O Desafio do Windows 7 Starter:
 
 Inicialmente, os testes foram realizados em um Windows 7 Starter. No entanto, identifiquei que a versão específica não possui o servidor de RDP nativo, o que impediu a exploração direta da porta 3389. Em vez de desistir, a estratégia foi adaptada para um ambiente Windows XP, onde o protocolo pôde ser habilitado para a demonstração da falha.
 
-# 2.2- Preparação do Alvo (Windows XP):
+### 2.2- Preparação do Alvo (Windows XP):
 
 Para que o ataque fosse bem-sucedido, foram necessárias as seguintes configurações na máquina alvo:
 
@@ -137,7 +137,7 @@ Para que o ataque fosse bem-sucedido, foram necessárias as seguintes configura�
 ```Bash
 netstat -an | findstr :3389.
 ```
-# 2.3- Configuração e Disparo no Metasploit:
+### 2.3- Configuração e Disparo no Metasploit:
 ```Bash
 use auxiliary/dos/windows/rdp/ms12_020_maxchannelids
 set RHOSTS [ip_maquina_alvo]
@@ -160,13 +160,13 @@ run
     necessário.
 
 
-#### ⚠️ Nenhum Windows XP foi ferido permanentemente (foi só um reboot) durante este experimento.
+# ⚠️ Nenhum Windows XP foi ferido permanentemente (foi só um reboot) durante este experimento.
 
 [↑ Voltar ao topo](#topo)
 
 ---
 
-# 3. Exploração de Falha em SSH
+### 3. Exploração de Falha em SSH
 Em breve!
 
 
@@ -174,7 +174,7 @@ Em breve!
 
 ---
 
-# 4. Adicionando Backdoor em um Executável
+### 4. Adicionando Backdoor em um Executável
 Em breve!
 
 [↑ Voltar ao topo](#topo)
