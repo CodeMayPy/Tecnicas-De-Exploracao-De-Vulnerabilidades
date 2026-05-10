@@ -7,7 +7,7 @@ Este repositório reúne uma série de laboratórios práticos focados em Segura
 
 ## 📑 Sumário de Explorações
 1. [Exploração de Backdoor (VSFTPD v2.3.4)](#1-exploração-de-backdoor-vsftpd-v234)
-2. [Negação de Serviço DoS](#2-negação-de-serviço-dos)
+2. [Negação de Serviço - DoS (Blue Screen of Death - BSOD)](#2-negação-de-serviço---dos-blue-screen-of-death---bsod)
 3. [Exploração de Falha em SSH (Brute Force Attack)](#3-exploração-de-falha-em-ssh-brute-force-attack)
 4. [Adicionando Backdoor em um Executável](#4-adicionando-backdoor-em-um-executável)
 
@@ -102,8 +102,7 @@ Etapa 5: Prova |
 
 ---
 
-### 2- Negação de Serviço DoS 
-## (Blue Screen of Death - BSOD)
+### 2. Negação de Serviço - DoS (Blue Screen of Death - BSOD)
 
 Neste laboratório, explorei a vulnerabilidade crítica *MS12-020* no protocolo *RDP* (Remote Desktop Protocol). O objetivo foi demonstrar como pacotes malformados podem causar o colapso total do Kernel de um sistema operacional.
 
